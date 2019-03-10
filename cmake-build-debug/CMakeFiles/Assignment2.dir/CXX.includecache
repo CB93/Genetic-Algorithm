@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/city.cpp
+random
+-
+iostream
+-
+city.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/city.hpp
+citynames.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/citynames.hpp
+constants.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/constants.hpp
+
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/city.hpp
+string
+-
+random
+-
+iostream
+-
+
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/citynames.hpp
+iostream
+-
+vector
+-
+
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/constants.hpp
+
