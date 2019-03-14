@@ -3,4 +3,4 @@ project(Assignment2)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Assignment2 main.cpp city.cpp tour.cpp tourList.cpp mergeTour.cpp)
+add_executable(Assignment2 main.cpp city.cpp tour.cpp tourList.cpp mergeTour.cpp mutate.cpp)

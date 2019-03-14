@@ -48,9 +48,9 @@ tour::~tour() = default;
 std::ostream &operator<<(std::ostream &out, const tour &tour) {
 
     for (size_t i = 0; i < constants::CITIES_IN_TOUR; i++) {
-        out << "Name: " << tour.getTourOfCities().at(i)->getName() << endl;
-//            << "Xcoordinate: " << tour.getTourOfCities().at(i)->getXcoordinate() << "\n"
-//            << "Ycoordinate: " << tour.getTourOfCities().at(i)->getYcoordinate() << endl;
+        out << "Name: " << tour.getTourOfCities().at(i)->getName()
+            << "Xcoordinate: " << tour.getTourOfCities().at(i)->getXcoordinate() << "\n"
+            << "Ycoordinate: " << tour.getTourOfCities().at(i)->getYcoordinate() << endl;
 
     }
     return out;

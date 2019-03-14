@@ -21,17 +21,25 @@ public:
         elite = findElite();
     }
 
+    explicit tourList(vector<tour *> &tour) {
+        list = tour;
+        elite = findElite();
+    }
+
+    tourList() = default;
+
+
     // Creates a tourList. Takes in MasterList of cities and creates tours out of them
     // using the tours constructor. Pushes created tours into the tourList vector
     vector<tour *> createTourList(vector<city> cityList);
 
     // Finds the tour within the list that has the best fitness and insterts it into
     // the front of the list
-    tour* findElite();
+    tour *findElite();
 
     // Once elite is found using the findElite function. This function is called
     // to put the elite Tour to the front of the vector
-    void propagateElitetoTop(size_t elice_Position);
+    void propagateElitetoTop(size_t elite_Position);
 
     // Overloaded insertion operator. TourList
     friend std::ostream &operator<<(std::ostream &out, const tourList &tourList);

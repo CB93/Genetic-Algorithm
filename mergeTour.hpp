@@ -10,18 +10,16 @@
 
 class mergeTour {
 private:
-    static void sliceParent1(vector<city *> &cityList, tourList &tourList);
+    static void sliceParent1(vector<city *> &cityList, tourList &tourList, size_t position);
 
-    static void sliceParent2(vector<city *> &cityList, tourList &tourList);
+    static void sliceParent2(vector<city *> &cityList, tourList &tourList, size_t position);
+
+    static size_t selectRandomNumber(size_t start, size_t size);
 
 public:
 
-    // Constructor
-    // Tour for merged tours
 
-    static int randomNumberGen();
-
-    static vector<tour *> crossOverTours(tourList &tourList);
+    static tourList crossOverTours(tourList &tourList);
 
     static bool isExist(city city1, vector<city *> cityList);
 

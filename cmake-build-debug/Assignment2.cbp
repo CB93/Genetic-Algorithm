@@ -95,6 +95,12 @@
 		<Unit filename="/cygdrive/c/Users/caleb/CLionProjects/Assignment2/mergeTour.hpp">
 			<Option target="Assignment2"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/caleb/CLionProjects/Assignment2/mutate.cpp">
+			<Option target="Assignment2"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/caleb/CLionProjects/Assignment2/mutate.hpp">
+			<Option target="Assignment2"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/caleb/CLionProjects/Assignment2/tour.cpp">
 			<Option target="Assignment2"/>
 		</Unit>

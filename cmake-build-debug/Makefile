@@ -204,6 +204,33 @@ mergeTour.cpp.s:
 	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/mergeTour.cpp.s
 .PHONY : mergeTour.cpp.s
 
+mutate.o: mutate.cpp.o
+
+.PHONY : mutate.o
+
+# target to build an object file
+mutate.cpp.o:
+	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/mutate.cpp.o
+.PHONY : mutate.cpp.o
+
+mutate.i: mutate.cpp.i
+
+.PHONY : mutate.i
+
+# target to preprocess a source file
+mutate.cpp.i:
+	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/mutate.cpp.i
+.PHONY : mutate.cpp.i
+
+mutate.s: mutate.cpp.s
+
+.PHONY : mutate.s
+
+# target to generate assembly for a file
+mutate.cpp.s:
+	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/mutate.cpp.s
+.PHONY : mutate.cpp.s
+
 tour.o: tour.cpp.o
 
 .PHONY : tour.o
@@ -276,6 +303,9 @@ help:
 	@echo "... mergeTour.o"
 	@echo "... mergeTour.i"
 	@echo "... mergeTour.s"
+	@echo "... mutate.o"
+	@echo "... mutate.i"
+	@echo "... mutate.s"
 	@echo "... tour.o"
 	@echo "... tour.i"
 	@echo "... tour.s"

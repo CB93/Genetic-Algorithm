@@ -5,38 +5,39 @@
 #include "mergeTour.hpp"
 #include "constants.hpp"
 
-vector<tour *> mergeTour::crossOverTours(tourList &tourList) {
-    tour *eliteTour = tourList.getElite(); // Keep elite tour to the side
-    vector<city *> cityList; // Creating a new cityList for a new tour
+tourList  mergeTour::crossOverTours(tourList &oldtourList) {
+    vector<tour *> mergedTours;
+    for (size_t i = 0; i < oldtourList.getList().size(); i++) {
+        vector<city *> cityList;     // Creating a new cityList for a new tour
+
+        size_t randomParent = selectRandomNumber(1, constants::POPULATION_SIZE - 1);
+//        cout << "Random Parent 1: " << randomParent << endl;
+
+        // Slices first parent from the tourList and inserts it's portion into the cityList
+        sliceParent1(cityList, oldtourList, randomParent);
+
+        randomParent = selectRandomNumber(1, constants::POPULATION_SIZE - 1);
+//        cout << "Random Parent 2: " << randomParent << endl;
+
+        // Slices second parent from the tourList and inserts it's portion into the cityList
+        sliceParent2(cityList, oldtourList, randomParent);
 
 
-    // Slices first parent from the tourList and inserts it's portion into the cityList
-    sliceParent1(cityList, tourList);
 
-    // Slices second parent from the tourList and inserts it's portion into the cityList
-    sliceParent2(cityList, tourList);
+        // Duplicating first city into last position to simulate a tour
+        cityList.push_back(cityList.at(0));
 
-    cityList.push_back(cityList.at(0)); // Duplicating first city into last position to simulate a tour
+        // Calling special tour constructor to create a tour from the merged cityList
+        tour *tempTour1 = new tour(cityList);
+        mergedTours.push_back(tempTour1);
+    }
 
     // Calling special tour constructor to create a tour from the merged cityList
-    tour tour1(cityList);
-    cout << "Final List" << endl;
-    cout << tour1 << endl;
-    cout << cityList.size() << endl;
+    tourList tourNew(mergedTours);
+
+    return tourNew;
 
 
-}
-
-int mergeTour::randomNumberGen() {
-    random_device ranDevice;
-    mt19937 gen(ranDevice());
-    uniform_int_distribution<int> distribution(0, constants::POPULATION_SIZE - 2);
-
-    int ran = distribution(gen);
-
-    cout << "Random Number for 1st parent";
-    cout << ran << endl;
-    return ran;
 }
 
 
@@ -49,36 +50,52 @@ bool mergeTour::isExist(city const city1, vector<city *> const cityList) {
     return false;
 }
 
-void mergeTour::sliceParent2(vector<city *> &cityList, tourList &tourList) {
+void mergeTour::sliceParent2(vector<city *> &cityList, tourList &tourList, size_t position) {
     size_t cityPosition = 0;
+    size_t howmany = 0;
     while (cityList.size() != 31) {
         city *temp;
-        temp = tourList.getList().at(1)->getTourOfCities().at(cityPosition);
+        temp = tourList.getList().at(position)->getTourOfCities().at(cityPosition);
 
 
         if (!mergeTour::isExist(*temp, cityList)) {
-            cout << *temp << endl;
 
             cityList.push_back(temp);
+            howmany++;
         }
 
         cityPosition++;
     }
+//    cout << "How many tooken from 2nd Parent: " << howmany << endl;
 
 }
 
-void mergeTour::sliceParent1(vector<city *> &cityList, tourList &tourList) {
+void mergeTour::sliceParent1(vector<city *> &cityList, tourList &tourList, size_t position) {
 
     // Getting Random number for the amount of tours to take from the 1st parent
-    int initialParent_size = mergeTour::randomNumberGen();
+    size_t initialParent_size = mergeTour::selectRandomNumber(0, constants::POPULATION_SIZE - 1);
+//    cout << "Random 1st Parent size: " << initialParent_size << endl;
 
     // Looping the amount of tours that it will take from the 1st parent
-    for (int j = 0; j < initialParent_size; j++) {
+    for (size_t j = 0; j < initialParent_size; j++) {
         city *temp;
-        temp = (tourList.getList().at(0)->getTourOfCities().at(j));
+        temp = (tourList.getList().at(position)->getTourOfCities().at(j));
         cityList.push_back(temp);
     }
 }
+
+
+size_t mergeTour::selectRandomNumber(size_t start, size_t size) {
+    random_device ranDevice;
+    mt19937 gen(ranDevice());
+    uniform_int_distribution<size_t> distribution(start, size);
+
+    size_t ran = distribution(gen);
+
+    return ran;
+}
+
+
 
 
 

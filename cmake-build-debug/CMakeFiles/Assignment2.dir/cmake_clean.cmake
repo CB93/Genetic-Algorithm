@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Assignment2.dir/tour.cpp.o"
   "CMakeFiles/Assignment2.dir/tourList.cpp.o"
   "CMakeFiles/Assignment2.dir/mergeTour.cpp.o"
+  "CMakeFiles/Assignment2.dir/mutate.cpp.o"
   "Assignment2.pdb"
   "Assignment2.exe"
   "libAssignment2.dll.a"

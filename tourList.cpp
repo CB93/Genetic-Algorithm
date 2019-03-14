@@ -11,7 +11,7 @@ vector<tour *> tourList::createTourList(vector<city> cityList) {
 
     vector<tour *> tourList;
 
-    for (int i = 0; i < constants::CITIES_IN_TOUR; i++) {
+    for (auto i = 0; i < constants::CITIES_IN_TOUR; i++) {
         tour *randomTour = new tour(cityList);
         tourList.push_back(randomTour);
 
@@ -22,13 +22,13 @@ vector<tour *> tourList::createTourList(vector<city> cityList) {
 
 std::ostream &operator<<(std::ostream &out, const tourList &tourList) {
     for (size_t i = 0; i < constants::POPULATION_SIZE; i++) {
-        out << "-------- TOUR #: " << (i + 1) << "  -------- " << endl;
+        out << "-------- TOUR #: " << i << "  -------- " << endl;
 
         for (size_t j = 0; j < 32; j++) {
 
-            out << "Name: " << tourList.getList().at(i)->getTourOfCities().at(j)->getName() << endl
-                << "Xcoordinate: " << tourList.getList().at(i)->getTourOfCities().at(j)->getXcoordinate() << endl
-                << "Ycoordinate: " << tourList.getList().at(i)->getTourOfCities().at(j)->getYcoordinate() << endl;
+            out << "Name: " << tourList.getList().at(i)->getTourOfCities().at(j)->getName() << endl;
+//                << "Xcoordinate: " << tourList.getList().at(i)->getTourOfCities().at(j)->getXcoordinate() << endl
+//                << "Ycoordinate: " << tourList.getList().at(i)->getTourOfCities().at(j)->getYcoordinate() << endl;
 
         }
         out << "Total Fitness :" << tourList.getList().at(i)->getFitness() << endl;
@@ -77,5 +77,7 @@ tour *tourList::getElite() const {
 void tourList::setElite(tour *elite) {
     tourList::elite = elite;
 }
+
+
 
 
