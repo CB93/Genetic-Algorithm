@@ -3,6 +3,7 @@
 #include "city.hpp"
 #include "tour.hpp"
 #include "tourList.hpp"
+#include "mergeTour.hpp"
 
 
 int main() {
@@ -14,8 +15,9 @@ int main() {
     tourList tourList(masterList);
 
 
-    cout << tourList;
+//    cout << tourList << endl;
 
+    mergeTour::crossOverTours(tourList);
 
             return 0;
          }
@@ -23,6 +25,5 @@ int main() {
 
 
 
-//    vector<city *> tourList = tour::generateTour(masterList, generator);
 
 

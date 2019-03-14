@@ -29,6 +29,9 @@ private:
     // Generates a random number between 0 and 1000
     float getRandomY(mt19937 &dev);
 
+
+
+
 public:
 
     // Constructor
@@ -40,6 +43,16 @@ public:
         xCoordinate = getRandomX(gen);
         yCoordinate = getRandomY(gen);
     }
+
+    city &operator=(city city1);
+
+    friend void mySwap(city &first, city &second);
+
+    friend ostream &operator<<(ostream &os, const city &city1);
+
+    bool operator==(const city &rhs) const;
+
+    bool operator!=(const city &rhs) const;
 
     // Copy constructor
     city(const city &a) { name = a.name, xCoordinate = a.xCoordinate, yCoordinate = a.yCoordinate; }

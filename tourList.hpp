@@ -29,6 +29,10 @@ public:
     // the front of the list
     tour* findElite();
 
+    // Once elite is found using the findElite function. This function is called
+    // to put the elite Tour to the front of the vector
+    void propagateElitetoTop(size_t elice_Position);
+
     // Overloaded insertion operator. TourList
     friend std::ostream &operator<<(std::ostream &out, const tourList &tourList);
 

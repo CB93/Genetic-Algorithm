@@ -9,6 +9,21 @@
 
 using namespace std;
 
+city &city::operator=(city city) {
+    mySwap(*this, city);
+    return *this;
+}
+
+void mySwap(city &first, city &second) {
+
+    swap(first.xCoordinate, second.xCoordinate); // Using std::swap
+    swap(first.yCoordinate, second.yCoordinate); // Using std::swap
+    swap(first.name, second.name); // Using std::swap
+
+}
+
+
+
 string city::getRandomName(mt19937 &dev) {
 
     // Random number generator
@@ -78,6 +93,26 @@ const string &city::getName() const {
 void city::setName(const string &name) {
     city::name = name;
 }
+
+bool city::operator==(const city &rhs) const {
+    return xCoordinate == rhs.xCoordinate &&
+           yCoordinate == rhs.yCoordinate &&
+           name == rhs.name;
+}
+
+bool city::operator!=(const city &rhs) const {
+    return !(rhs == *this);
+}
+
+ostream &operator<<(ostream &os, const city &city1) {
+
+    os << "name: " << city1.name << endl
+    <<"xCoordinate: " << city1.xCoordinate << endl
+    <<"yCoordinate: " << city1.yCoordinate;
+    return os;
+}
+
+
 
 
 

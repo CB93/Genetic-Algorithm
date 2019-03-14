@@ -6,18 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/caleb/CLionProjects/Assignment2/city.cpp
-random
--
-iostream
--
-city.hpp
-/cygdrive/c/Users/caleb/CLionProjects/Assignment2/city.hpp
-citynames.hpp
-/cygdrive/c/Users/caleb/CLionProjects/Assignment2/citynames.hpp
-constants.hpp
-/cygdrive/c/Users/caleb/CLionProjects/Assignment2/constants.hpp
-
 /cygdrive/c/Users/caleb/CLionProjects/Assignment2/city.hpp
 string
 -
@@ -26,11 +14,37 @@ random
 iostream
 -
 
-/cygdrive/c/Users/caleb/CLionProjects/Assignment2/citynames.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/constants.hpp
+
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/main.cpp
 iostream
 -
-vector
+list
 -
+city.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/city.hpp
+tour.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/tour.hpp
+tourList.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/tourList.hpp
+mergeTour.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/mergeTour.hpp
 
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/mergeTour.cpp
+mergeTour.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/mergeTour.hpp
+constants.hpp
 /cygdrive/c/Users/caleb/CLionProjects/Assignment2/constants.hpp
+
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/mergeTour.hpp
+tourList.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/tourList.hpp
+
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/tour.hpp
+city.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/city.hpp
+
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/tourList.hpp
+tour.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/tour.hpp
 

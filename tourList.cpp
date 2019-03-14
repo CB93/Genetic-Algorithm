@@ -16,14 +16,12 @@ vector<tour *> tourList::createTourList(vector<city> cityList) {
         tourList.push_back(randomTour);
 
     }
-
-
     return tourList;
 }
 
 
 std::ostream &operator<<(std::ostream &out, const tourList &tourList) {
-    for (size_t i = 0; i < 32; i++) {
+    for (size_t i = 0; i < constants::POPULATION_SIZE; i++) {
         out << "-------- TOUR #: " << (i + 1) << "  -------- " << endl;
 
         for (size_t j = 0; j < 32; j++) {
@@ -40,7 +38,20 @@ std::ostream &operator<<(std::ostream &out, const tourList &tourList) {
 }
 
 tour *tourList::findElite() {
-    return nullptr;
+    tour *elite = list.at(0);
+    size_t position = 0;
+    for (size_t i = 0; i < constants::POPULATION_SIZE; i++) {
+        if (list.at(i)->getFitness() < elite->getFitness()) {
+            elite = list.at(i);
+            position = i;
+        }
+    }
+    propagateElitetoTop(position);
+    return elite;
+}
+
+void tourList::propagateElitetoTop(size_t elite_Position) {
+    iter_swap(list.begin(), list.begin() + elite_Position);
 }
 
 /**

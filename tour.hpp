@@ -15,6 +15,7 @@ private:
     int fitness;
     // Represents the entire tour and the cities within the tour
     vector<city *> tourOfCities;
+
 public:
 
     // Constructor
@@ -24,6 +25,12 @@ public:
 
     }
 
+    // Special constructor for Merged tours
+    explicit tour(vector<city *> &cityList) {
+        tourOfCities = cityList;
+        fitness = calculateTourFitness();
+
+    }
 
     // Copy Constructor
     tour(const tour &a) = default;
@@ -42,14 +49,6 @@ public:
 
     // Overloaded insertion operator. tour
     friend std::ostream &operator<<(std::ostream &out, const tour &tour);
-
-
-
-
-
-
-
-
 
 
 
