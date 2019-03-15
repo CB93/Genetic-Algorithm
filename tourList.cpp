@@ -12,7 +12,7 @@ vector<tour *> tourList::createTourList(vector<city> cityList) {
     vector<tour *> tourList;
 
     for (auto i = 0; i < constants::CITIES_IN_TOUR; i++) {
-        tour *randomTour = new tour(cityList);
+        auto *randomTour = new tour(cityList);
         tourList.push_back(randomTour);
 
     }

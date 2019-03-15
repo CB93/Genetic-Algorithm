@@ -10,9 +10,9 @@
 
 class mergeTour {
 private:
-    static void sliceParent1(vector<city *> &cityList, tourList &tourList, size_t position);
+    static void sliceParent1(vector<city *> &cityList, tourList const &tourList, size_t position);
 
-    static void sliceParent2(vector<city *> &cityList, tourList &tourList, size_t position);
+    static void sliceParent2(vector<city *> &cityList, tourList const &tourList, size_t position);
 
     static size_t selectRandomNumber(size_t start, size_t size);
 

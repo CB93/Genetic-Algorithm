@@ -17,7 +17,7 @@ vector<city *> tour::generateTour(vector<city> cityList) {
 
         uniform_int_distribution<int> distribution(0, (int) cityList.size() - 1);
         int ran = distribution(gen);
-        city *randomCity = new city(cityList.at(ran));
+        auto *randomCity = new city(cityList.at(ran));
         tour.push_back(randomCity);
         cityList.erase(cityList.begin() + ran);
     }

@@ -6,8 +6,19 @@
 #define ASSIGNMENT2_MUTATE_HPP
 
 
-class mutate {
+#include "tourList.hpp"
 
+class mutate {
+private:
+
+public:
+
+    static void mutateList(vector<city *> &cityList);
+
+    static tourList getMutableCities(tourList &tourList1);
+
+
+    static float getChance();
 };
 
 

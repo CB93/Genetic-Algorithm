@@ -5,30 +5,26 @@
 #include "mergeTour.hpp"
 #include "constants.hpp"
 
-tourList  mergeTour::crossOverTours(tourList &oldtourList) {
+tourList mergeTour::crossOverTours(tourList &oldTourList) {
     vector<tour *> mergedTours;
-    for (size_t i = 0; i < oldtourList.getList().size(); i++) {
-        vector<city *> cityList;     // Creating a new cityList for a new tour
+    for (size_t i = 0; i < oldTourList.getList().size(); i++) {
 
-        size_t randomParent = selectRandomNumber(1, constants::POPULATION_SIZE - 1);
-//        cout << "Random Parent 1: " << randomParent << endl;
+        // Creating a new cityList for a new tour
+        vector<city *> cityList;
 
         // Slices first parent from the tourList and inserts it's portion into the cityList
-        sliceParent1(cityList, oldtourList, randomParent);
-
-        randomParent = selectRandomNumber(1, constants::POPULATION_SIZE - 1);
-//        cout << "Random Parent 2: " << randomParent << endl;
+        size_t randomParent = selectRandomNumber(1, constants::POPULATION_SIZE - 1);
+        sliceParent1(cityList, oldTourList, randomParent);
 
         // Slices second parent from the tourList and inserts it's portion into the cityList
-        sliceParent2(cityList, oldtourList, randomParent);
-
-
+        randomParent = selectRandomNumber(1, constants::POPULATION_SIZE - 1);
+        sliceParent2(cityList, oldTourList, randomParent);
 
         // Duplicating first city into last position to simulate a tour
         cityList.push_back(cityList.at(0));
 
         // Calling special tour constructor to create a tour from the merged cityList
-        tour *tempTour1 = new tour(cityList);
+        auto *tempTour1 = new tour(cityList);
         mergedTours.push_back(tempTour1);
     }
 
@@ -50,9 +46,8 @@ bool mergeTour::isExist(city const city1, vector<city *> const cityList) {
     return false;
 }
 
-void mergeTour::sliceParent2(vector<city *> &cityList, tourList &tourList, size_t position) {
+void mergeTour::sliceParent2(vector<city *> &cityList, tourList const &tourList, size_t const position) {
     size_t cityPosition = 0;
-    size_t howmany = 0;
     while (cityList.size() != 31) {
         city *temp;
         temp = tourList.getList().at(position)->getTourOfCities().at(cityPosition);
@@ -61,20 +56,17 @@ void mergeTour::sliceParent2(vector<city *> &cityList, tourList &tourList, size_
         if (!mergeTour::isExist(*temp, cityList)) {
 
             cityList.push_back(temp);
-            howmany++;
         }
 
         cityPosition++;
     }
-//    cout << "How many tooken from 2nd Parent: " << howmany << endl;
-
 }
 
-void mergeTour::sliceParent1(vector<city *> &cityList, tourList &tourList, size_t position) {
+void mergeTour::sliceParent1(vector<city *> &cityList, tourList const &tourList, size_t const position) {
 
     // Getting Random number for the amount of tours to take from the 1st parent
     size_t initialParent_size = mergeTour::selectRandomNumber(0, constants::POPULATION_SIZE - 1);
-//    cout << "Random 1st Parent size: " << initialParent_size << endl;
+
 
     // Looping the amount of tours that it will take from the 1st parent
     for (size_t j = 0; j < initialParent_size; j++) {
@@ -88,8 +80,8 @@ void mergeTour::sliceParent1(vector<city *> &cityList, tourList &tourList, size_
 size_t mergeTour::selectRandomNumber(size_t start, size_t size) {
     random_device ranDevice;
     mt19937 gen(ranDevice());
-    uniform_int_distribution<size_t> distribution(start, size);
 
+    uniform_int_distribution<size_t> distribution(start, size);
     size_t ran = distribution(gen);
 
     return ran;
