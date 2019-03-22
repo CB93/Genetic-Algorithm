@@ -150,6 +150,33 @@ city.cpp.s:
 	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/city.cpp.s
 .PHONY : city.cpp.s
 
+geneticAlgorithm.o: geneticAlgorithm.cpp.o
+
+.PHONY : geneticAlgorithm.o
+
+# target to build an object file
+geneticAlgorithm.cpp.o:
+	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/geneticAlgorithm.cpp.o
+.PHONY : geneticAlgorithm.cpp.o
+
+geneticAlgorithm.i: geneticAlgorithm.cpp.i
+
+.PHONY : geneticAlgorithm.i
+
+# target to preprocess a source file
+geneticAlgorithm.cpp.i:
+	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/geneticAlgorithm.cpp.i
+.PHONY : geneticAlgorithm.cpp.i
+
+geneticAlgorithm.s: geneticAlgorithm.cpp.s
+
+.PHONY : geneticAlgorithm.s
+
+# target to generate assembly for a file
+geneticAlgorithm.cpp.s:
+	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/geneticAlgorithm.cpp.s
+.PHONY : geneticAlgorithm.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -297,6 +324,9 @@ help:
 	@echo "... city.o"
 	@echo "... city.i"
 	@echo "... city.s"
+	@echo "... geneticAlgorithm.o"
+	@echo "... geneticAlgorithm.i"
+	@echo "... geneticAlgorithm.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

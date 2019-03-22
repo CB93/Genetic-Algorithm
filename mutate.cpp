@@ -6,7 +6,16 @@
 #include "constants.hpp"
 #include "city.hpp"
 
+int mutate::getNumberofMutations() {
+    return numberofMutations;
+}
+
+void mutate::setNumberofMutations(int numberofMutations) {
+    mutate::numberofMutations = numberofMutations;
+}
+
 using namespace std;
+int  mutate::numberofMutations = 0;
 
 tourList mutate::getMutableCities(tourList &tourList1) {
     vector<tour *> mutatedTours;
@@ -31,15 +40,14 @@ tourList mutate::getMutableCities(tourList &tourList1) {
 
 void mutate::mutateList(vector<city *> &cityList) {
 
-    for (size_t i = 0; i < constants::POPULATION_SIZE - 1; i++) {
+    for (size_t i = 1; i < constants::POPULATION_SIZE - 1; i++) {
 
-        if (i == 31) {
+        if (i == 30) {
             break;
         }
-        if (getChance() < constants::MUTATION_CHANCE) {
-            cout << "MUTATION OCCURED" << endl;
+        if (getChance() < constants::MUTATION_RATE) {
             iter_swap(cityList.begin() + i, cityList.begin() + (i + 1));
-
+            numberofMutations++;
         }
 
 
@@ -58,4 +66,8 @@ float mutate::getChance() {
     return distribution(gen);
 
 }
+
+
+
+
 

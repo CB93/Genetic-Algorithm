@@ -6,7 +6,18 @@ CMakeFiles/Assignment2.dir/city.cpp.o: ../city.hpp
 CMakeFiles/Assignment2.dir/city.cpp.o: ../citynames.hpp
 CMakeFiles/Assignment2.dir/city.cpp.o: ../constants.hpp
 
+CMakeFiles/Assignment2.dir/geneticAlgorithm.cpp.o: ../city.hpp
+CMakeFiles/Assignment2.dir/geneticAlgorithm.cpp.o: ../constants.hpp
+CMakeFiles/Assignment2.dir/geneticAlgorithm.cpp.o: ../geneticAlgorithm.cpp
+CMakeFiles/Assignment2.dir/geneticAlgorithm.cpp.o: ../geneticAlgorithm.hpp
+CMakeFiles/Assignment2.dir/geneticAlgorithm.cpp.o: ../mergeTour.hpp
+CMakeFiles/Assignment2.dir/geneticAlgorithm.cpp.o: ../mutate.hpp
+CMakeFiles/Assignment2.dir/geneticAlgorithm.cpp.o: ../tour.hpp
+CMakeFiles/Assignment2.dir/geneticAlgorithm.cpp.o: ../tourList.hpp
+
 CMakeFiles/Assignment2.dir/main.cpp.o: ../city.hpp
+CMakeFiles/Assignment2.dir/main.cpp.o: ../constants.hpp
+CMakeFiles/Assignment2.dir/main.cpp.o: ../geneticAlgorithm.hpp
 CMakeFiles/Assignment2.dir/main.cpp.o: ../main.cpp
 CMakeFiles/Assignment2.dir/main.cpp.o: ../mergeTour.hpp
 CMakeFiles/Assignment2.dir/main.cpp.o: ../mutate.hpp

@@ -10,7 +10,8 @@ class constants
 public:
     static const int CITIES_IN_TOUR = 32;
     static const int POPULATION_SIZE = 32;
-    static constexpr float MUTATION_CHANCE = 15.00;
+    static constexpr float MUTATION_RATE = 15.00;
+    static const int ITERATION_LIMIT = 1000;
 };
 
 

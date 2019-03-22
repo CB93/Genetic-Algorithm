@@ -16,13 +16,27 @@ iostream
 
 /cygdrive/c/Users/caleb/CLionProjects/Assignment2/constants.hpp
 
-/cygdrive/c/Users/caleb/CLionProjects/Assignment2/mutate.cpp
-mutate.hpp
-/cygdrive/c/Users/caleb/CLionProjects/Assignment2/mutate.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/geneticAlgorithm.cpp
+iomanip
+-
+geneticAlgorithm.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/geneticAlgorithm.hpp
 constants.hpp
 /cygdrive/c/Users/caleb/CLionProjects/Assignment2/constants.hpp
-city.hpp
-/cygdrive/c/Users/caleb/CLionProjects/Assignment2/city.hpp
+mergeTour.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/mergeTour.hpp
+mutate.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/mutate.hpp
+
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/geneticAlgorithm.hpp
+tour.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/tour.hpp
+tourList.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/tourList.hpp
+
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/mergeTour.hpp
+tourList.hpp
+/cygdrive/c/Users/caleb/CLionProjects/Assignment2/tourList.hpp
 
 /cygdrive/c/Users/caleb/CLionProjects/Assignment2/mutate.hpp
 tourList.hpp
