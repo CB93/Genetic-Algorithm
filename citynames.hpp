@@ -10,7 +10,9 @@
 
 using namespace std;
 
-// Entire list of names that are used throughout the city
+/**
+ * List of names that are used in the city class to randomize city names
+ */
 vector<string> cityNames = {"Rugby", "Harlingen", "Brigg", "Wendover", "New Orleans", "Belmont", "Shefford",
                             "Victoria", "Hornsey", "Hoboken", "Clovis", "Kyabram", "Ansonia", "Parramatta",
                             "Chelmsford", "Wells", "Birmingham", "Coggeshall", "Rockland", "Kokomo", "Dursley",

@@ -74,19 +74,10 @@ const vector<city *> &tour::getTourOfCities() const {
     return tourOfCities;
 }
 
-// Setter for tourOfCities data member
-void tour::setTourOfCities(const vector<city *> &tourOfCities) {
-    tour::tourOfCities = tourOfCities;
-}
 
 // Getter for fitness data member
 int tour::getFitness() const {
     return fitness;
-}
-
-// Setter for fitness data member
-void tour::setFitness(int fitness) {
-    tour::fitness = fitness;
 }
 
 

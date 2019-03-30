@@ -74,25 +74,16 @@ float city::getXcoordinate() const {
     return xCoordinate;
 }
 
-void city::setXcoordinate(float xCoordinate) {
-    city::xCoordinate = xCoordinate;
-}
 
 float city::getYcoordinate() const {
     return yCoordinate;
 }
 
-void city::setYcoordinate(float yCoordinate) {
-    city::yCoordinate = yCoordinate;
-}
 
 const string &city::getName() const {
     return name;
 }
 
-void city::setName(const string &name) {
-    city::name = name;
-}
 
 bool city::operator==(const city &rhs) const {
     return xCoordinate == rhs.xCoordinate &&

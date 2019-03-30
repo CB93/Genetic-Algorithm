@@ -10,9 +10,6 @@ int mutate::getNumberofMutations() {
     return numberofMutations;
 }
 
-void mutate::setNumberofMutations(int numberofMutations) {
-    mutate::numberofMutations = numberofMutations;
-}
 
 using namespace std;
 int  mutate::numberofMutations = 0;

@@ -58,12 +58,7 @@ void tourList::propagateElitetoTop(size_t elite_Position) {
  * Getters and Setters
  */
 
-// Setter for list data member
-void tourList::setList(const vector<tour *> &list) {
 
-    tourList::list = list;
-
-}
 
 // Getter for list data member
 const vector<tour *> &tourList::getList() const {
@@ -74,9 +69,7 @@ tour *tourList::getElite() const {
     return elite;
 }
 
-void tourList::setElite(tour *elite) {
-    tourList::elite = elite;
-}
+
 
 
 

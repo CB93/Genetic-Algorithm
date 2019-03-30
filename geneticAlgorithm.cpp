@@ -9,7 +9,7 @@
 #include "mutate.hpp"
 
 void geneticAlgorithm::Algorithm(tour *const eliteTour, tourList tourList1) {
-
+    bool factor = false;
     size_t iterations = 0;
     tourList *tempCompare = nullptr;
     tourList *temp = nullptr;
@@ -33,12 +33,14 @@ void geneticAlgorithm::Algorithm(tour *const eliteTour, tourList tourList1) {
 
         }
 
-        cout << "Elite of Iteration: " << temp->getElite()->getFitness() << endl;
+        cout << "Elite of this Iteration: " << temp->getElite()->getFitness() << endl;
 
         if (temp->getElite()->getFitness() < best) {
             best = temp->getElite()->getFitness();
         }
         tempCompare = temp;
+
+        cout << "Best distance so far: " << best << endl;
 
         if (temp->getElite()->getFitness() < best) {
 
@@ -51,7 +53,10 @@ void geneticAlgorithm::Algorithm(tour *const eliteTour, tourList tourList1) {
         iterations++;
     }
 
-    printFinalReport(eliteTour, temp, best);
+    if (iterations < constants::ITERATION_LIMIT) {
+        factor;
+    }
+    printFinalReport(eliteTour, temp, best, iterations, factor);
 }
 
 string geneticAlgorithm::isImprovement(tour *const eliteTour, int newElite) {
@@ -63,17 +68,24 @@ string geneticAlgorithm::isImprovement(tour *const eliteTour, int newElite) {
 
 }
 
-void geneticAlgorithm::printFinalReport(tour *const eliteTour, tourList *temp, double best) {
+void geneticAlgorithm::printFinalReport(tour *const eliteTour, tourList *temp, double best, size_t iterations,
+                                        bool improvementFactor) {
     cout << "\n\n ***STATUS REPORT***" << endl;
-    cout << "\nNumber of mutations that occured: " << mutate::getNumberofMutations() << endl;
-    cout << "\nOld Elite Tour Fitness: " << eliteTour->getFitness() << endl;
-    cout << "\nBest fitness from Base:" << best <<  " with a difference of:" << setprecision(3) << getDifference(best,eliteTour)<< "%" << endl;
+    cout << "\nNumber of iterations occurred:" << iterations << endl;
+    (improvementFactor ? cout << "\nImprovement factor of 30% was achieved" << endl : cout
+            << "\nImprovement factor of 30% was not achieved" << endl);
+    cout << "\nNumber of mutations occurred: " << mutate::getNumberofMutations() << endl;
+    cout << "\nFitness from Base: " << eliteTour->getFitness() << endl;
+    cout << "\nFitness from Best: " << best << " with a difference of: " << setprecision(3)
+         << getDifference(best, eliteTour) << " %" << endl;
     cout << "\n\n ***Best Route***" << endl;
-    cout << *(temp->getElite()) << endl;
+    cout << *(temp)->getElite() << endl;
+    cout << "\n\n ***Base Route***" << endl;
+    cout << *eliteTour << endl;
 }
 
-double geneticAlgorithm::getDifference(double best, tour * eliteTour) {
-return abs(((eliteTour->getFitness()- best) / ((eliteTour->getFitness() + best) / 2)) * 100) ;
+double geneticAlgorithm::getDifference(double best, tour *eliteTour) {
+    return abs(((eliteTour->getFitness() - best) / ((eliteTour->getFitness() + best) / 2)) * 100);
 
 
 }
